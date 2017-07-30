@@ -37,3 +37,7 @@ a {
     height: 52px;
     width: 128px;
 }
+
+.no-bullets {
+    list-style-type: none;
+}
