@@ -6,3 +6,34 @@ body {
     max-width: 800px;
     margin: auto;
 }
+
+a {
+    color: darkgreen;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+}
+
+.inline-logo {
+    vertical-align: middle;
+    width: 32px;
+}
+
+.tile {
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    height: 107px;
+    width: 170px;
+}
+
+.back-logo {
+    display: block;
+    margin: 0 auto;
+    height: 52px;
+    width: 128px;
+}
