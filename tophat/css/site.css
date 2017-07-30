@@ -1,0 +1,8 @@
+body {
+    font-family: sans-serif, serif, monospace;
+}
+
+.content {
+    max-width: 800px;
+    margin: auto;
+}
