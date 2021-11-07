@@ -7,18 +7,45 @@
 </head>
 <body>
 <div class="content">
-    <img class="logo" src="../img/coax-logo-256x256.png"/>
-    <h1>Cox</h1>
-<strong>Coax</strong> is a Clojure library for defining schema/specs, validation, generative
-testing, grooming, generated sensible human-readable values, custom data
-elements, guarded functions, generative test function generation, HTTP
-payload/parameter validation, decoration/undecoration, and navigatable
-data diction generation of HTML, markdown, and hiccup.
+    <img class="logo" src="img/coax-logo-256x256.png"/>
+    <h1>Coax</h1>
+    <strong>Coax</strong> is an OpenAPI routing Clojure library to generate and route REST API via
+    canonical OpenAPI file.
 
+    The OpenAPI REST API definition format has become a standard in REST API
+    development.
+
+    In the past, the REST API may be completely defined in the OpenAPI definition
+    file(s), but the HTTP method/endpoint routing has been done independently of
+    the OpenAPI definition file(s) which may result in the actual routing of the
+    REST API becoming out-of-sync with the OpenAPI definition/document file(s).
+
+    Coax is a library that allows for Clojure REST API development that never is
+    out-of-sync with the OpenAPI definition/documentation file(s) by adding a
+    single `handler` key in the endpoint/method definition that links the
+    endpoint/method to a Clojure handler function identifier.
+
+    <h2>How to Use Coax</h2>
+
+    <ul>
+        <li>Add `coax` dependency to the Compojure-based project.</li>
+        <li>Define the REST API in OpenAPI file(s) with examples and response/request
+            schemas somewhere in the `resources` folder
+            (e.g. `resources/private/api/openapi.v1.json`)</li>
+        <li>Add `handler` function identifiers as strings
+            (`package.subp1.subp2.handler.function-name`)in the OpenAPI file(s).</li>
+        <li>In the initialization of your project, make call(s) to
+            `coax/import-openapi-definition-file`with the `resource` path as the string
+            argument.</li>
+        <li>Add `(coax/api-compojure-route)` in your routes.</li>
+        <li>Start your Compojure service.</li>
+        <li>Use `curl` or another REST client and test your REST API handlers defined
+           in the OpenAPI file(s).</li>
+    </ul>
     <h2>Source Repository and README.md</h2>
-    The diction git repository is <a href="http://github.com/sierralogic/coax" target="_blank">here.</a>
+    The `coax` git repository is <a href="http://github.com/sierralogic/coax" target="_blank">here.</a>
     <h2>API Documentation</h2>
-The Clojure API documentation is <a href="doc" target="_blank">here.</a>
+    TBD: The Clojure API documentation is <a href="doc" target="_blank">here.</a>
 
 <br/><br/>
     <a href="../"><img class="back-logo" src="img/logo-sl.png"/></a>
